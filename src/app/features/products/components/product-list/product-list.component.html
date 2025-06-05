@@ -1,0 +1,21 @@
+<div class="container mx-auto">
+  <label for="category" id="category-label">Filtrer</label>
+  <select 
+    id="category" 
+    [(ngModel)]="selectedCategory" 
+    (change)="onCategoryChange()"
+    aria-labelledby="category-label"
+  >
+    @for (category of categories$ | async; track category) {
+      <option [value]="category">{{ category }}</option>
+    }
+  </select>
+</div>
+
+<div class="grid" role="list" aria-label="Liste des produits">
+  @for (product of filteredProducts$ | async; track product.id) {
+    <div class="col-12 md:col-4" role="listitem">
+      <app-product-card [product]="product" />
+    </div>
+  }
+</div>

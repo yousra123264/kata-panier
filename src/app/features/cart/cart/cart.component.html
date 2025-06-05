@@ -1,0 +1,38 @@
+@if (cartItems.length > 0) { 
+  <div class="cart-items-container">
+    @for (item of cartItems; track item.product.id) {
+      <div class="cart-line">
+        <div class="cart-info">
+          <div><strong>{{ item.product.productName }}</strong></div>
+          <div>Quantité : {{ item.quantity }}</div>
+          <div>Taxes : {{ item.totalTaxes | currency:'EUR' }}</div>
+          <div>Prix HT : {{ item.unitPriceHT | currency:'EUR' }}</div>
+          <div>Prix TTC : {{ item.product | prixTtc | currency:'EUR' }}</div>
+        </div>
+
+        <button
+          pButton
+          icon="pi pi-times"
+          class="p-button-rounded p-button-danger"
+          (click)="removeItem(item.product.id)"
+         >
+        </button>
+      </div>
+    }
+
+    <div class="cart-totals">
+      <div class="total-line">
+        <strong>Total Taxes :</strong> {{ getTotalTaxes() | currency:'EUR' }}
+      </div>
+      <div class="total-line">
+        <strong>Total TTC :</strong> {{ getTotalTTC() | currency:'EUR' }}
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="empty-cart-container p-4 text-center" role="region" aria-label="Panier vide">
+    <i class="pi pi-shopping-cart" style="font-size: 3rem; color: var(--primary-color)" aria-hidden="true"></i>
+    <h3 class="mt-3">Votre panier est vide</h3>
+    <p class="text-secondary mb-4">Ajoutez des articles pour commencer vos achats</p>
+  </div>
+}

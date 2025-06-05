@@ -1,0 +1,7 @@
+<nav class="navbar"  aria-label="Menu principal">
+  <a routerLink="/" class="logo">Kata Panier</a>
+
+  <a routerLink="/cart" class="cart"  aria-label="Accueil - Kata Panier">
+    Panier : {{ totalItems$ | async }}
+  </a>
+</nav>

@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 1rem;
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #1e293b;
+  &:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+  }
+  }
+
+  .cart {
+    background: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+       &:hover {
+         background: #0056b3;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+a:focus {
+  outline: 1px solid #bbb8b8; 
+}
+}
