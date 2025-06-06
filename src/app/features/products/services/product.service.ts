@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class ProductService {
   private readonly dataUrl = environment.productsUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   /**
    * Charge les produits à partir du fichier JSON local.

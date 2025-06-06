@@ -13,7 +13,7 @@ export class ProductCardComponent {
 
   quantity = 1;
 
-  constructor(private cartService: CartService) {}
+  constructor(private readonly cartService: CartService) {}
 
   /**
    * Vérifie si le produit est en rupture de stock.
